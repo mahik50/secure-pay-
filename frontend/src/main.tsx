@@ -14,7 +14,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* Public Routes (No Layout) */}
-      <Route path='/' element={<Signup />} />
+      <Route path='/signup' element={<Signup />} />
       <Route path='/login' element={<Login />} />
       
       {/* Protected Routes (Uses the Layout) */}

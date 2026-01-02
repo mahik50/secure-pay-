@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const handleLogout = async () => {
-  const navigate = useNavigate();
-
+  
   try {
     console.log("Entered handlelogout");
 
-    const res = await fetch("http://localhost:4000/api/v1/logout", {
+    const res = await fetch("https://secure-pay-vlg7.onrender.com/api/v1/logout", {
       method: "POST",
       credentials: "include",
     });

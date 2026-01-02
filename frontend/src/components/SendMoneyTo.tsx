@@ -43,7 +43,7 @@ export default function SendMoney() {
   const isSender = from === sessionStorage.getItem("loggedInUser");
 
   const handlePay = async () => {
-    if (isPaying) return; // ⛔ block double calls
+    if (isPaying) return; 
     setIsPaying(true);
 
     try {
@@ -92,7 +92,7 @@ export default function SendMoney() {
     } catch (err) {
       console.log("Error occurred in transaction ", err);
     } finally {
-      setIsPaying(false); // ✅ release lock
+      setIsPaying(false);
     }
   };
 
