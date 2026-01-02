@@ -49,7 +49,7 @@ export default function SendMoney() {
     try {
       // const txId = uuid();
       const res = await fetch(
-        `http://localhost:4000/api/v1/send-money-to/${to}`,
+        `https://secure-pay-vlg7.onrender.com/api/v1/send-money-to/${to}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

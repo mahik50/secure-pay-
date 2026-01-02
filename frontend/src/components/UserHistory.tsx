@@ -19,7 +19,7 @@ export default function UserHistory() {
     const fetchHistory = async () => {
       try {
         const res = await fetch(
-          "http://localhost:4000/api/v1/show-history",
+          "https://secure-pay-vlg7.onrender.com/api/v1/show-history",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
