@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  username String @unique
+  password String 
+  account Account?
+}
+
+model Account{
+  id Int @id @default(autoincrement())
+  balance Decimal @db.Decimal(10,2)
+  userId Int @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  history History[]
+}
+
+model History{
+  id Int @id @default(autoincrement())
+  sender String 
+  receiver String
+  amount Decimal @db.Decimal(10,2)
+  accId Int
+  createdAt DateTime @default(now())
+  account Account @relation(fields: [accId], references: [id], onDelete: Cascade)
+}
