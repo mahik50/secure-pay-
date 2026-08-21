@@ -7,7 +7,10 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 await connectDB();
-
+app.use((req, res, next) => {
+    res.setHeader("X-Backend-Version", "cors-test-2026-08-21");
+    next();
+});
 app.use(cors({
     origin: "https://secure-pay-mauve.vercel.app", 
     credentials: true,
